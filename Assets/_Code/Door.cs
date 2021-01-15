@@ -1,0 +1,27 @@
+﻿using UnityEngine;
+using UnityEngine.Events;
+
+public class Door : MonoBehaviour {
+    [SerializeField] Animator animator;
+    [SerializeField] UnityEvent onDoorOpen = new UnityEvent();
+    [SerializeField] UnityEvent onDoorClose = new UnityEvent();
+    [SerializeField] private AudioSource opensound;
+    [SerializeField] private AudioSource closesound;
+
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            animator.SetBool("character_nearby", true);
+            onDoorOpen.Invoke();
+            opensound.Play();
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            animator.SetBool("character_nearby", false);
+            onDoorClose.Invoke();
+            closesound.Play();
+        }
+    }
+}
