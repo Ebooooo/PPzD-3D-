@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{31ab043d-f94a-4b06-b800-fb336ef4579f}">
+		<property name="assetPath">
+			<value>DRONE Server Room Loop.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.7495691609977317</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{acac38a1-35b1-4c28-bc38-7268bea9e67a}</destination>
+		</relationship>
+	</object>
+</objects>

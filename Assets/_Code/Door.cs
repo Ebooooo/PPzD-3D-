@@ -13,7 +13,6 @@ public class Door : MonoBehaviour {
         if (other.gameObject.CompareTag("Player")) {
             animator.SetBool("character_nearby", true);
             onDoorOpen.Invoke();
-            opensound.Play();
         }
     }
 
@@ -21,7 +20,6 @@ public class Door : MonoBehaviour {
         if (other.gameObject.CompareTag("Player")) {
             animator.SetBool("character_nearby", false);
             onDoorClose.Invoke();
-            closesound.Play();
         }
     }
 }

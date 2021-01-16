@@ -6,6 +6,9 @@ public class GlobalAudioChanger : MonoBehaviour
 {
     [SerializeField] private AudioSource outsideAudioSource;
     [SerializeField] private AudioSource insideAudioSource;
+    [FMODUnity.EventRef]
+    public string outsideAudio;
+    public string insideAudio;
 
     AudioSource activeAudioSource;
 

@@ -46,6 +46,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        [FMODUnity.EventRef]
+        public string inputsound;
+
         // Use this for initialization
         private void Start()
         {
@@ -196,7 +199,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             var foostepsClips = m_IsWalking ? GetFootstepsSound() : runningFootsteps;
             int n = Random.Range(1, foostepsClips.Length);
             m_AudioSource.clip = foostepsClips[n];
-            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            FMODUnity.RuntimeManager.PlayOneShot(inputsound);
             // move picked sound to index 0 so it's not picked next time
             foostepsClips[n] = foostepsClips[0];
             foostepsClips[0] = m_AudioSource.clip;
